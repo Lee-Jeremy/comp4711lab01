@@ -40,7 +40,7 @@ Adds Students and prints them.
         $third = new Student();
         $third->surname = "Lee";
         $third->first_name = "Jeremy";
-        $third->add_email('work', 'jlee@cia.com');
+        $third->add_email('work', 'jeremylee.business@gmail.com');
         $third->add_grade(95);
         $third->add_grade(75);
         $third->add_grade(85);
