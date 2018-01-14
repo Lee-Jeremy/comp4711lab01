@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Adds Students and prints them.
 -->
 <html>
     <head>
@@ -11,10 +9,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include('Student.php');
+        include('Student.php'); // Student class
 
         $students = array();
 
+        // adds Student #1
         $first = new Student();
         $first->surname = "Doe";
         $first->first_name = "John";
@@ -25,6 +24,7 @@ and open the template in the editor.
         $first->add_grade(55);
         $students['j123'] = $first;
 
+        // adds Student #2
         $second = new Student();
         $second->surname = "Einstein";
         $second->first_name = "Albert";
@@ -36,8 +36,21 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
 
-        foreach ($students as $student)
+        // adds Student #3
+        $third = new Student();
+        $third->surname = "Lee";
+        $third->first_name = "Jeremy";
+        $third->add_email('work', 'jlee@cia.com');
+        $third->add_grade(95);
+        $third->add_grade(75);
+        $third->add_grade(85);
+        $students['j999'] = $third;
+
+        ksort($students); // sorts students by key
+        // prints all Students
+        foreach ($students as $student) {
             echo $student->toString();
+        }
         ?>
     </body>
 </html>
